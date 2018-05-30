@@ -381,8 +381,10 @@ def plot_heatmaps(model, data, args):
 def plot_spectral_lines(model, data, args):
     print('-' * 30 + 'Begin: plot spectral lines' + '-' * 30)
 
+    x_val, y_val = data
+
     out = models.Model(model.input,
-                       model.get_layer('gibbs_routing_2').output[1]).predict(center_crop(data[:1000]),
+                       model.get_layer('gibbs_routing_2').output[1]).predict(center_crop(x_val[:1000]),
                                                                              batch_size=args.batch_size)
 
     plt.clf()
@@ -391,7 +393,7 @@ def plot_spectral_lines(model, data, args):
 
     for idx in range(5):
         ax = plt.subplot(3, 2, idx + 1)
-        tmp = out[y_train[:1000, idx].astype('bool'), :]
+        tmp = out[y_val[:1000, idx].astype('bool'), :]
         ax.set_title('class ' + str(idx) + ': ' + classes[idx])
         plt.plot(np.arange(1, 17), tmp.transpose())
 
@@ -519,7 +521,7 @@ if __name__ == "__main__":
     else:  # as long as weights are given, will run testing
         if args.weights is None:
             print('No weights are provided. Will test using random initialized weights.')
-        plot_spectral_lines(model, x_val, args)
+        plot_spectral_lines(model, (x_val, y_val), args)
         plot_heatmaps(model, x_val, args)
         test(model=model, data=(x_val, y_val), args=args)
 

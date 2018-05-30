@@ -315,7 +315,7 @@ def plot_heatmaps(model, data, args):
         ax.set_title('input')
 
         plt.subplot2grid((1, 10), (0, 2), colspan=2)
-        out = models.Model(model2.input[0], model2.get_layer('activation_10').output).predict(x_test[idx:idx+1])
+        out = models.Model(model.input[0], model.get_layer('activation_10').output).predict(x_test[idx:idx+1])
         ax = plt.gca()
         img = ax.imshow(out[0, :, :, 0])
         divider = make_axes_locatable(ax)
@@ -324,8 +324,8 @@ def plot_heatmaps(model, data, args):
         ax.set_title('d_in Caps1')
 
         plt.subplot2grid((1, 10), (0, 4), colspan=2)
-        out = np.reshape(models.Model(model2.input[0],
-                                      model2.get_layer('gibbs_routing_4').output[1]).predict(x_test[idx:idx+1]),
+        out = np.reshape(models.Model(model.input[0],
+                                      model.get_layer('gibbs_routing_4').output[1]).predict(x_test[idx:idx+1]),
                          (-1, 8, 8, 1))
         ax = plt.gca()
         img = ax.imshow(out[0, :, :, 0])
@@ -335,8 +335,8 @@ def plot_heatmaps(model, data, args):
         ax.set_title('d_in Caps2')
 
         plt.subplot2grid((1, 10), (0, 6), colspan=2)
-        out = np.reshape(models.Model(model2.input[0],
-                                      model2.get_layer('gibbs_routing_5').output[1]).predict(x_test[idx:idx+1]),
+        out = np.reshape(models.Model(model.input[0],
+                                      model.get_layer('gibbs_routing_5').output[1]).predict(x_test[idx:idx+1]),
                          (-1, 4, 4, 1))
         ax = plt.gca()
         img = ax.imshow(out[0, :, :, 0])
@@ -345,7 +345,7 @@ def plot_heatmaps(model, data, args):
         plt.colorbar(img, cax=cax)
         ax.set_title('d_in Caps3')
 
-        _, x_recon = model2.predict([x_test[idx:idx+1, :], y_test[idx:idx+1, :]])
+        _, x_recon = model.predict([x_test[idx:idx+1, :], y_test[idx:idx+1, :]])
 
         plt.subplot2grid((1, 10), (0, 8), colspan=2)
         ax = plt.gca()
@@ -367,7 +367,7 @@ def plot_heatmaps(model, data, args):
 def plot_spectral_lines(model, data, args):
     print('-' * 30 + 'Begin: plot spectral lines' + '-' * 30)
 
-    (x_test, y_test) = data
+    x_test, y_test = data
 
     out = models.Model(model.input[0],
                        model.get_layer('gibbs_routing_2').output[1]).predict(x_test[:1000],
