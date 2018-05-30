@@ -1,0 +1,5 @@
+"""
+the dir should contain some usefull predefined layer.
+An open question is how we should arange them in one file. Split vq, lvq, hinton and
+or relational vs. vectorial data? What are meaningful names?
+"""
