@@ -14,12 +14,12 @@ beautiful Keras implementations. Furthermore, you can mix Keras and anysma to yo
 
 As we began this project the goal was to design a Learning Vector Quantization (LVQ) platform based on Keras.
 Later on we discovered many beautiful parallels between Neural Networks and Capsules.
-Thus, we started to design a general Capsule platform. Of course, a lot of the implementations are made to model Learning Vector Quantization Capsules.
+Thus, we started to design a general Capsule platform. Of course, a lot of the implementations are made to model [Learning Vector Quantization Capsules](Capsule_LVQ_nips_2018_R3_1_blind.pdf).
 But nevertheless, you can model arbitrary capsule networks while anysma does the annoying stuff behind the scenes. Feel free to use and experiment with anysma!
 
 ## This early access snapshot of the anysma package.
 
-This repository is a snapshot of the current state of the anysma project. The official repository will be publicly released as soon as the double-blind review process for the corresponding paper has been finished. To give reviewers and other interested people access to this package we decided to publish this version.
+This repository is a snapshot of the current state of the anysma project. The official repository will be publicly released as soon as the double-blind review process for the corresponding [paper](Capsule_LVQ_nips_2018_R3_1_blind.pdf) has been finished. To give reviewers and other interested people access to this package we decided to publish this version.
 
 We don't support and we will delete this repository after the official package has been released. So please don't start contributing to this repository.
 Although, we are open to any useful comments, feedback and bugs you might find!
@@ -37,7 +37,7 @@ want to use pre-training methods, you require scikit-learn __0.19.1__ or newer. 
 
 ## Repeat and play with our experiments.
 
-We collected all experiments desribed in our paper in the examples directory and a bit more:
+We collected all experiments desribed in our [paper](Capsule_LVQ_nips_2018_R3_1_blind.pdf) in the examples directory and a bit more:
 
 - capsnet.py: An anysma implementation of the CapsNet architecture of Sabour et al. "Dynamic Routing between capsules" 
 on MNIST.
