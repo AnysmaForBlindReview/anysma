@@ -184,7 +184,7 @@ This example trains the LVQ-Capsule network described in our paper on smallNORB.
 
 See our paper for details about the training settings. If you want to continue the training of the model described in our paper call
 
-```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb```
+```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb48```
 
 This will automatically download our pre-trained model weights. Otherwise the weights are initialized randomly. Finally, you can
 start the following tests:
@@ -195,7 +195,7 @@ start the following tests:
 
 To start the tests on our model call
 
-```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb -t```
+```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb48 -t```
 
 Our experiments about the generalization behavior to novel viewpoints can be repeated via the optional argument `-s`. This will
 select the corresponding experimental setting, which can be
@@ -206,7 +206,7 @@ select the corresponding experimental setting, which can be
 
 If you call the script with our pre-trained model it will download the corresponding model automatically. See the following example:
 
-```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb -t -s elevation```
+```PYTHONPATH=. python examples/lvq_caps_smallnorb48.py -w smallnorb48 -t -s elevation```
 
 __Note__: We had a bug in our dataset input pipeline (4% of the images were black). Thus, our model performance in the paper is wrong. The correct 
 performances are:
