@@ -211,7 +211,7 @@ If you call the script with our pre-trained model it will download the correspon
 __Note__: We had a bug in our dataset input pipeline (4% of the images were black). Thus, our model performance in the paper is wrong. The correct 
 performances are:
 
-- "normal" experimental setting: __2.2%__ error rate on the test dataset. This is close to the performance of the 
+- "normal" experimental setting: __2.7%__ error rate on the test dataset. This is close to the performance of the 
 Matrix Capsules of Hinton.
 - "elevation" experimental setting: __15.1%__ error rate on the test dataset if we stop the training at a validation 
 error rate of __4.3%__.

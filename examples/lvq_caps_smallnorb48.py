@@ -270,7 +270,7 @@ def train(model, data, args):
 
     model.compile(optimizer=optimizers.Adam(lr=args.lr),
                   loss=generalized_kullback_leibler_divergence,
-                  metrics={'lvq_capsule': 'accuracy'})
+                  metrics={'lvq_caps': 'accuracy'})
 
     model.fit_generator(generator=train_generator(x_train, y_train, args.batch_size),
                         steps_per_epoch=int(y_train.shape[0] / args.batch_size),
@@ -499,7 +499,7 @@ if __name__ == "__main__":
         URL = 'http://tiny.cc/anysma_models_snorb48_az'
     else:
         NAME = 'smallnorb48.h5'
-        HASH = '97a60d803b143f1386de538e4c1e3e92'
+        HASH = '31240e84dc896a0072007c245660dfe0'
         URL = 'http://tiny.cc/anysma_models_snorb48'
 
     if not (args.weights in {'smallnorb48', None} or os.path.exists(args.weights)):

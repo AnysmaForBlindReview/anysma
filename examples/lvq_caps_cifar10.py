@@ -176,7 +176,7 @@ def train(model, data, args):
 
     model.compile(optimizer=optimizers.Adam(lr=args.lr),
                   loss=generalized_kullback_leibler_divergence,
-                  metrics={'lvq_capsule': 'accuracy'})
+                  metrics={'lvq_caps': 'accuracy'})
 
     model.fit_generator(generator=train_generator(x_train, y_train, args.batch_size),
                         steps_per_epoch=int(y_train.shape[0] / args.batch_size),
