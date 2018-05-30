@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-""" It's not the traditional GLVQ, because we replace the GLVQ loss function with negative softmax and cross-entropy.
-Final result is around 97%.
-The traditional GLVQ stops at around 90%.
+""" Traditional GLVQ.
+Final result is around 90%.
 """
 
 from keras import callbacks
@@ -99,6 +98,5 @@ for i in range(num_classes):
         img = plt.imshow(protos[i*protos_per_class + j, :, :])
         img.set_cmap('gray')
         plt.axis('off')
-plt.title('Prototypes')
 plt.savefig(os.path.join(save_dir, 'protos.png'), bbox_inches='tight')
 

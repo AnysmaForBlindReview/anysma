@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-""" It's not the traditional GLVQ, because we replace the GLVQ loss function with negative softmax and cross-entropy.
+""" It's not the traditional GrTLVQ, because we replace the GLVQ loss function with cross-entropy.
 Final result is around 97%.
-The traditional GLVQ stops at around 90%.
 """
 
 from keras import callbacks

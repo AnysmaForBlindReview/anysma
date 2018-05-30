@@ -225,7 +225,7 @@ def LvqCapsNet(input_shape):
     digit_caps.add(diss)
     digit_caps.add(GibbsRouting(norm_axis='channels', trainable=False,
                                 diss_regularizer=MaxDistance(alpha=0.0001)))
-    digit_caps.add(Classification(probability_transformation='neg_softmax', name='lvq_capsule'))
+    digit_caps.add(Classification(probability_transformation='neg_softmax', name='lvq_caps'))
 
     digitcaps = digit_caps(x)
 
