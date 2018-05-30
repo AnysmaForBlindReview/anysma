@@ -359,7 +359,7 @@ def plot_heatmaps(model, data, args):
 
         plt.subplot2grid((1, 10), (0, 9))
         out = np.reshape(models.Model(model.input,
-                                      model.get_layer('lvq_capsule').output[2]).predict(data[idx:idx+1]),
+                                      model.get_layer('lvq_caps').output[2]).predict(data[idx:idx+1]),
                          (-1, 5, 1, 1))
         ax = plt.gca()
         img = ax.imshow(np.tile(out[0, :, :, 0], (1, 4)))
